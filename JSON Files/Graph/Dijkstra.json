@@ -1,0 +1,32 @@
+{
+    "Dijkstra Function": {
+            "prefix": ["dijkstra" , "Dijkstra"],
+            "body": [
+                "vl dijkstra(ll n+1, ll source, vvpii &adj)",
+                "{",
+                "\tvl dist(n, LLONG_MAX);",
+                "\tdist[source] = 0;",
+                "",
+                "\tpriority_queue<pii, vpii, greater<>> pq;",
+                "\tpq.push({0, source});",
+                "",
+                "\twhile (!pq.empty())",
+                "\t{",
+                "\t\tauto [d, u] = pq.top(); pq.pop();",
+                "\t\tif(d > dist[u])",
+                "\t\t\tcontinue;",
+                "",
+                "\t\tfor (auto [v, w] : adj[u])",
+                "\t\t{",
+                "\t\t\tif(dist[u] + w < dist[v])",
+                "\t\t\t{",
+                "\t\t\t\tdist[v] = dist[u] + w;",
+                "\t\t\t\tpq.push({dist[v], v});",
+                "\t\t\t}",
+                "\t\t}",
+                "\t}",
+                "\treturn dist;",
+                "}"
+            ]
+        }
+}
