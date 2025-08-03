@@ -1,0 +1,43 @@
+{
+    "Prim's MST": {
+        "prefix": ["Prim" , "prim"],
+        "body": [
+            "vb visited;",
+            "vl min_edge, parent;",
+            "",
+            "ll prim(ll n, vector<vector<pii>> &adj) {",
+            "\tvisited.assign(n+1, false);",
+            "\tmin_edge.assign(n+1, LLONG_MIN);",
+            "\tparent.assign(n+1, -1);",
+            "",
+            "\tll total_weight = 0;",
+            "\tpriority_queue<pii, vector<pii>, greater<>> pq;",
+            "",
+            "\tmin_edge[0] = 0;        // Change for 1-based indexing",
+            "\tpq.push({0, 0});        // {weight, node}",
+            "",
+            "\twhile (!pq.empty())",
+            "\t{",
+            "\t\tauto [w, u] = pq.top();",
+            "\t\tpq.pop();",
+            "\t\tif(visited[u])",
+            "\t\t\tcontinue;",
+            "",
+            "\t\tvisited[u] = true;",
+            "\t\ttotal_weight += w;",
+            "",
+            "\t\tfor (auto [v, weight] : adj[u])",
+            "\t\t{",
+            "\t\t\tif (!visited[v] && weight < min_edge[v])",
+            "\t\t\t{",
+            "\t\t\t\tmin_edge[v] = weight;",
+            "\t\t\t\tparent[v] = u;",
+            "\t\t\t\tpq.push({weight, v});",
+            "\t\t\t}",
+            "\t\t}",
+            "\t}",
+            "\treturn total_weight;",
+            "}"
+        ]
+    }
+}

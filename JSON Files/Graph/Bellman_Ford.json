@@ -1,6 +1,6 @@
 {
     "Bellman-Ford with Negative Cycle Detection": {
-        "prefix": "bellmanford",
+        "prefix": ["Bellmanford" , "bellmanford"],
         "body": [
             "vl dist, parent, cycle;",
             "",

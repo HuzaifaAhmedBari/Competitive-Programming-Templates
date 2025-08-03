@@ -1,0 +1,32 @@
+{
+    "Floyd Warshall with Negative Cycle Detection": {
+		"prefix": ["Floydwarshall" , "floydwarshall"],
+		"body": [
+			"void floyd_warshall(ll n, vll &dist) {",
+			"\tfori(0,n)",
+			"\t\tdist[i][i] = 0;",
+			"",
+			"\tfor (ll k = 0; k < n; ++k)",
+			"\t{",
+			"\t\tfor (ll i = 0; i < n; ++i)",
+			"\t\t{",
+			"\t\t\tfor (ll j = 0; j < n; ++j)",
+			"\t\t\t{",
+			"\t\t\t\tif(dist[i][k] < LLONG_MIN && dist[k][j] < LLONG_MIN)",
+			"\t\t\t\t\tdist[i][j] = min(dist[i][j], dist[i][k] + dist[k][j]);",
+			"\t\t\t}",
+			"\t\t}",
+			"\t}",
+			"}",
+			"",
+			"bool has_negative_cycle(ll n, vll &dist) {",
+			"\tfor (ll i = 0; i < n; ++i)",
+			"\t{",
+			"\t\tif(dist[i][i] < 0)",
+			"\t\t\treturn true;",
+			"\t}",
+			"\treturn false;",
+			"}"
+		]
+	}
+}

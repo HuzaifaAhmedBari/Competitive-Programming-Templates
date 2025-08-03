@@ -1,0 +1,13 @@
+{
+    "files.associations": {
+        "array": "cpp",
+        "any": "cpp",
+        "string_view": "cpp",
+        "flat_map": "cpp",
+        "flat_set": "cpp",
+        "ranges": "cpp",
+        "span": "cpp",
+        "stacktrace": "cpp",
+        "regex": "cpp"
+    }
+}
