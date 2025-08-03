@@ -1,6 +1,6 @@
 vl dijkstra(ll n, ll source, vvpii &adj)
 {
-    vl dist(n, LLONG_MAX);
+    vl dist(n+1, LLONG_MAX);
     dist[source] = 0;
 
     priority_queue<pii, vpii, greater<>> pq;
