@@ -2,8 +2,8 @@
     "Dijkstra Shortest Path": {
             "prefix": ["dijkstra" , "Dijkstra"],
             "body": [
-                "vl parent",
-                "vl dijkstra(ll n+1, ll source, vvpii &adj)",
+                "vl parent;",
+                "vl dijkstra(ll n, ll source, vvpii &adj)",
                 "{",
                 "\tvl dist(n, LLONG_MAX);",
                 "\tdist[source] = 0;",
