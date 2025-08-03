@@ -9,8 +9,8 @@ bool topsort(ll n, ll source, const vll &adj) {
         for (int v : adj[u])
             indegree[v]++;
 
-    queue<int> q;
-    for (int i = 0; i < n; ++i)
+    queue<ll> q;
+    for (int i = 0; i < n; ++i)       // change for 1 based indexing
         if (indegree[i] == 0)
             q.push(i);
 
