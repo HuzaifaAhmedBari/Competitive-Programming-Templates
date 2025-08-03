@@ -1,6 +1,8 @@
+vl parent;
 vl dijkstra(ll n, ll source, vvpii &adj)
 {
     vl dist(n+1, LLONG_MAX);
+    parent.assign(n, -1); // For path reconstruction
     dist[source] = 0;
 
     priority_queue<pii, vpii, greater<>> pq;

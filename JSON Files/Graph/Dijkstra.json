@@ -2,6 +2,7 @@
     "Dijkstra Shortest Path": {
             "prefix": ["dijkstra" , "Dijkstra"],
             "body": [
+                "vl parent",
                 "vl dijkstra(ll n+1, ll source, vvpii &adj)",
                 "{",
                 "\tvl dist(n, LLONG_MAX);",
@@ -26,6 +27,15 @@
                 "\t\t}",
                 "\t}",
                 "\treturn dist;",
+                "}",
+                "vl getPath(ll source, ll target, const vl &parent) {",
+                "\tvl path;",
+                "\tfor (ll v = target; v != -1; v = parent[v])",
+                "\t\tpath.push_back(v);",
+                "",
+                "\treverse(path.begin(), path.end());",
+                "\tif (path.front() != source) return {};",
+                "\treturn path;",
                 "}"
             ]
         }

@@ -1,0 +1,40 @@
+{
+    "Topological Sort with DP": {
+		"prefix": ["Topsort", "topsort"],
+		"body": [
+			"vl parent",
+			"vl topo, dist;",
+			"bool topsort(ll n, ll source, const vll &adj) {",
+			"\tll count = 0;",
+			"\tvl indegree(n+1, 0);",
+			"\tdist.assign(n+1, LLONG_MIN);",
+			"\tdist[source] = 0;",
+			"",
+			"\tfor(ll u = 0; u < n; u++)", 
+			"\t\tfor (int v : adj[u])",
+			"\t\t\tindegree[v]++;",
+			"",
+			"\tqueue<ll> q;",
+			"\tfor (int i = 0; i < n; ++i)",
+			"\t\tif (indegree[i] == 0)",
+			"\t\t\tq.push(i);",
+			"",
+			"\twhile (!q.empty()) {",
+			"\t\tll u = q.front();",
+			"\t\tq.pop();",
+			"",
+			"\t\tfor (ll v : adj[u]) {",
+			"\t\t\t// if(dist[u] != LLONG_MIN)",
+			"\t\t\t// \tdist[v] = max(dist[v], dist[u] + 1);",
+			"\t\t\t// +1 for unweighted edge or use weight for weighted DAG",
+			"",
+			"\t\t\tif (--indegree[v] == 0)",
+			"\t\t\t\tq.push(v);",
+			"\t\t}",
+			"\t\tcount++;",
+			"\t}",
+			"\treturn count != n; // True means cycle exists",
+			"}"
+		]
+	}
+}
