@@ -28,13 +28,12 @@
                 "\t}",
                 "\treturn dist;",
                 "}",
-                "vl getPath(ll source, ll target, const vl &parent) {",
+                "vl getPath(ll target) {",
                 "\tvl path;",
                 "\tfor (ll v = target; v != -1; v = parent[v])",
                 "\t\tpath.push_back(v);",
                 "",
                 "\treverse(path.begin(), path.end());",
-                "\tif (path.front() != source) return {};",
                 "\treturn path;",
                 "}"
             ]
