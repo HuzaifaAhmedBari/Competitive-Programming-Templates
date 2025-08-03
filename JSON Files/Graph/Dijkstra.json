@@ -1,5 +1,5 @@
 {
-    "Dijkstra Function": {
+    "Dijkstra Shortest Path": {
             "prefix": ["dijkstra" , "Dijkstra"],
             "body": [
                 "vl dijkstra(ll n+1, ll source, vvpii &adj)",
