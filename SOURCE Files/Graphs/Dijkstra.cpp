@@ -25,14 +25,12 @@ vl dijkstra(ll n, ll source, vvpii &adj)
     }
     return dist;
 }
-vl getPath(ll source, ll target) {
+vl getPath(ll target) {
     vl path;
     for (ll v = target; v != -1; v = parent[v])
         path.push_back(v);
 
     reverse(all(path));
 
-    if (path.front() != source)
-        return {};              // No path exists
     return path;
 }
