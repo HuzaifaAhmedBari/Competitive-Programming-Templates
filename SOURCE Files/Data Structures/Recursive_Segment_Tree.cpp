@@ -55,6 +55,7 @@ private:
         ll mid = (l + r) / 2;
         apply(2 * idx, l, mid, lazy[idx]);
         apply(2 * idx + 1, mid + 1, r, lazy[idx]);
+        lazy[idx] = 0;
         has_lazy[idx] = false;
     }
 

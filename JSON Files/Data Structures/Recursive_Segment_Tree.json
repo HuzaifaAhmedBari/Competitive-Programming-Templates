@@ -59,6 +59,7 @@
 			"\t\tll mid = (l + r) / 2;",
 			"\t\tapply(2 * idx, l, mid, lazy[idx]);",
 			"\t\tapply(2 * idx + 1, mid + 1, r, lazy[idx]);",
+			"\t\tlazy[idx] = 0;",
 			"\t\thas_lazy[idx] = false;",
 			"\t}",
 			"",
