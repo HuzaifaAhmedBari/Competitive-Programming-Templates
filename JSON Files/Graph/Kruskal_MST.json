@@ -1,0 +1,27 @@
+{
+    "Kruskal's MST": {
+        "prefix": "kruskal",
+        "body": [
+            "struct Edge {",
+            "\tll u, v, w;",
+            "\tbool operator<(const Edge &e) const {",
+            "\t\treturn w < e.w;",
+            "\t}",
+            "};",
+            "",
+            "ll kruskal(ll n, vector<Edge> &edges) {",
+            "\tsort(edges.begin(), edges.end());",
+            "\tDSU dsu(n);",
+            "\tll total_weight = 0;",
+            "",
+            "\tfor (auto &e : edges) {",
+            "\t\tif (dsu.unite(e.u, e.v)) {",
+            "\t\t\ttotal_weight += e.w;",
+            "\t\t\t// store edge (e.u, e.v) if needed",
+            "\t\t}",
+            "\t}",
+            "\treturn total_weight;",
+            "}"
+        ]
+    }
+}
