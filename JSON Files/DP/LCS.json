@@ -1,0 +1,39 @@
+{
+    "Longest Common Subsequence": {
+		"prefix": ["LCS" , "lcs"],
+		"body": [
+			"pair<ll, string> lcs(const string &a, const string &b) {",
+			"\tll n = a.size(), m = b.size();",
+			"\tvll dp(n+1, vl(m+1, 0));",
+			"",
+			"\t// Build DP table",
+			"\tfori(1,n+1) {",
+			"\t\tforj(1,m+1) {",
+			"\t\t\tif(a[i-1] == b[j-1])",
+			"\t\t\t\tdp[i][j] = dp[i - 1][j - 1] + 1;",
+			"\t\t\telse",
+			"\t\t\t\tdp[i][j] = max(dp[i - 1][j], dp[i][j - 1]);",
+			"\t\t}",
+			"\t}",
+			"",
+			"\t// Reconstruct LCS string",
+			"\tstring lcs_str;",
+			"\tll i = n, j = m;",
+			"\twhile(i > 0 && j > 0) {",
+			"\t\tif (a[i - 1] == b[j - 1]) {",
+			"\t\t\tlcs_str.push_back(a[i - 1]);",
+			"\t\t\ti--;",
+			"\t\t\tj--;",
+			"\t\t} else if(dp[i - 1][j] >= dp[i][j - 1]) {",
+			"\t\t\ti--;",
+			"\t\t} else {",
+			"\t\t\tj--;",
+			"\t\t}",
+			"\t}",
+			"\treverse(all(lcs_str));",
+			"",
+			"\treturn {dp[n][m], lcs_str};",
+			"}"
+		]
+	}
+}
