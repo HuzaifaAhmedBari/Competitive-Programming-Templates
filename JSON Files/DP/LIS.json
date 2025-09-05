@@ -1,0 +1,34 @@
+{
+    "Longest Increasing Subsequence": {
+		"prefix": ["LIS" , "lis"],
+		"body": [
+			"pair<ll,vl> lis(const vl &a) {",
+			"\tll n = a.size();",
+			"\tvl d, idx(n), parent(n, -1);",
+			"",
+			"\tfori(0,n)",
+			"\t{",
+			"\t\tauto it = lower_bound(d.begin(), d.end(), a[i]);",
+			"\t\tll j = it - d.begin();",
+			"",
+			"\t\tif(it == d.end())",
+			"\t\t\td.push_back(a[i]);",
+			"\t\telse",
+			"\t\t\t*it = a[i];",
+			"",
+			"\t\tidx[j] = i;",
+			"\t\tif(j > 0)",
+			"\t\t\tparent[i] = idx[j - 1];",
+			"\t}",
+			"",
+			"\t// Reconstruct LIS",
+			"\tvl lis_seq;",
+			"\tfor(ll i = idx[d.size() - 1]; i >= 0; i = parent[i])",
+			"\t\tlis_seq.push_back(a[i]);",
+			"",
+			"\treverse(all(lis_seq));",
+			"\treturn {d.size(), lis_seq};",
+			"}"
+		]
+	}
+}
