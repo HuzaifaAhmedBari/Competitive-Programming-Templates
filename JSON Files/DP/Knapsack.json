@@ -1,0 +1,25 @@
+{
+    "0-1 Knapsack (Space Optimized)": {
+		"prefix": ["Knapsack" , "knapsack"],
+		"body": [
+			"// 0/1 Knapsack (Space Optimized)",
+			"// n = number of items",
+			"// W = maximum capacity",
+			"// wt[i] = weight of item i",
+			"// val[i] = value of item i",
+			"ll knapsack(const vl &wt, const vl &val, ll W) {",
+			"\tll n = wt.size();",
+			"\tvl dp(W + 1, 0);",
+			"",
+			"\tfori(0,n)",
+			"\t{",
+			"\t\tfor(ll w = W; w >= wt[i]; w--)",
+			"\t\t{",
+			"\t\t\tdp[w] = max(dp[w], val[i] + dp[w - wt[i]]);",
+			"\t\t}",
+			"\t}",
+			"\treturn dp[W];",
+			"}"
+		]
+	}
+}
