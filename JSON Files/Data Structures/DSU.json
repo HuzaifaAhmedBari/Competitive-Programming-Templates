@@ -1,6 +1,6 @@
 {
     "DSU Class": {
-		"prefix": ["Disjoint" , "disjoint"],
+		"prefix": ["Dsuclass" , "dsuclass" , "Disjoint" , "disjoint"],
 		"body": [
 			"class DSU {",
 			"private:",
