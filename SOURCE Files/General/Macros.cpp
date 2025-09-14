@@ -28,6 +28,7 @@ using ordered_set = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statisti
 #define vbb vector<vector<bool>>
 #define us unordered_set<ll>
 #define all(vec) vec.begin(), vec.end()
+#define allr(vec) vec.rbegin(), vec.rend()
 #define sahi(vec) sort(vec.begin(),vec.end())
 #define ulta(vec) sort(vec.begin(),vec.end(),greater<typename decltype(vec)::value_type>())
 #define fori(a,b) for(ll i=a;i<b;i++)
