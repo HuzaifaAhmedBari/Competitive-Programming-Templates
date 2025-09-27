@@ -1,5 +1,5 @@
 vl topo, dist;
-bool topsort(ll n, ll source, const vll &adj) {
+bool topsort(ll n, const vll &adj, ll source = 0) {
     ll count = 0;
     vl indegree(n+1, 0);
     dist.assign(n+1, LLONG_MIN);
@@ -10,14 +10,15 @@ bool topsort(ll n, ll source, const vll &adj) {
             indegree[v]++;
 
     queue<ll> q;
-    for (int i = 0; i < n; ++i)       // change for 1 based indexing
-        if (indegree[i] == 0)
+    fori(0,n)       // change for 1 based indexing
+        if(indegree[i]==0)
             q.push(i);
 
     while (not q.empty())
     {
         ll u = q.front();
         q.pop();
+        topo.push_back(u);
 
         for (ll v : adj[u]) {
             // if(dist[u] != LLONG_MIN)
