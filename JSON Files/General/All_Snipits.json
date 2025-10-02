@@ -241,7 +241,8 @@
 			"\t}",
 			"\treturn 0;",
 			"}"
-		]
+		],
+		"description": "Competitive Programming template with macros, STL shortcuts, PBDS (ordered_set), operator overloads, math utilities (gcd, lcm, primes, digit sum), and a main function with test cases."
 	},
 	"Topological Sort with DP": {
 		"prefix": ["Topsort", "topsort"],
@@ -280,7 +281,8 @@
 			"\t}",
 			"\treturn count != n; // True means cycle exists",
 			"}"
-		]
+		],
+		"description": "Performs Topological Sort on a DAG using Kahn's algorithm (BFS with indegree). Also supports DP on DAG (e.g., longest path computation). Returns true if a cycle exists, false otherwise."
 	},
 	"Dijkstra Function": {
 		"prefix": ["dijkstra" , "Dijkstra"],
@@ -319,7 +321,8 @@
             "\treverse(path.begin(), path.end());",
             "\treturn path;",
             "}"
-		]
+		],
+		"description": "Dijkstra's algorithm for single-source shortest paths in O((N+M) log N). Includes path reconstruction using a parent array."
 	},
 	"Bellman-Ford with Negative Cycle Detection": {
 		"prefix": ["Bellmanford" , "bellmanford"],
@@ -391,7 +394,8 @@
 			"\treverse(cycle.begin(), cycle.end());",
 			"\treturn true;",
 			"}"
-		]
+		],
+		"description": "Bellman-Ford algorithm for single-source shortest paths in O(N*M). Supports path retrieval and detects negative weight cycles, with functionality to reconstruct the cycle if it exists."
 	},
 	"Floyd Warshall with Negative Cycle Detection": {
 		"prefix": ["Floydwarshall" , "floydwarshall"],
@@ -421,7 +425,8 @@
 			"\t}",
 			"\treturn false;",
 			"}"
-		]
+		],
+		"description": "Floyd-Warshall algorithm for all-pairs shortest paths in O(N^3). Also detects negative weight cycles by checking if any dist[i][i] < 0 after relaxation."
 	},
 	"TarjanSCC for Bridges And Articulation Points": {
 		"prefix": ["Tarjan" , "tarjan" , "Bridges" , "bridges"],
@@ -495,7 +500,8 @@
 			"\t\t}",
 			"\t}",
 			"};"
-		]
+		],
+		"description": "Tarjan's DFS-based algorithm to find Bridges and Articulation Points in an undirected graph in O(N+M). Uses discovery time (tin) and low-link values (low) to detect critical edges and cut vertices. Handles disconnected graphs too."
 	},
 	"DSU Class": {
 		"prefix": ["Dsuclass" , "dsuclass" , "Disjoint" , "disjoint"],
@@ -508,7 +514,7 @@
 			"\tDSU(int n) : n(n), components(n) {",
 			"\t\tparent.resize(n+1);",
 			"\t\tsize.resize(n+1, 1);",
-			"\t\tiota(all(parent), 1);",
+			"\t\tiota(all(parent), 0);",
 			"\t}",
 			"",
 			"\tll find(ll x) {",
@@ -539,7 +545,8 @@
 			"\t\treturn size[find(x)];",
 			"\t}",
 			"};"
-		]
+		],
+		"description": "Disjoint Set Union (Union-Find) data structure with path compression and union by size. Supports find, unite, connectivity check, component count, and set size queries efficiently."
 	},
 	"Prim's MST": {
 		"prefix": ["Prim" , "prim"],
@@ -580,7 +587,8 @@
 			"\t}",
 			"\treturn total_weight;",
 			"}"
-		]
+		],
+		"description": "Prim's algorithm for finding the Minimum Spanning Tree (MST) of a weighted undirected graph. Uses a priority queue to greedily select the next minimum edge. Tracks visited nodes, parent links, and accumulates the total MST weight."
 	},
 	"Kruskal's MST": {
         "prefix": ["Kruskal" , "kruskal"],
@@ -605,7 +613,8 @@
             "\t}",
             "\treturn total_weight;",
             "}"
-        ]
+        ],
+		"description": "Kruskal's algorithm for finding the Minimum Spanning Tree (MST) of a weighted undirected graph. Uses Disjoint Set Union (DSU) to efficiently check connectivity and avoid cycles. Sorts edges by weight and greedily adds them to form the MST, returning the total weight."
     },
 	"Segment Tree with Lazy (Set/Add)": {
 		"prefix": ["Segtree" , "segtree" , "segmenttree"],
@@ -717,7 +726,8 @@
 			"\tvoid update(ll pos, ll val) { update_point(pos, val, 1, 0, n - 1); }          // point update",
 			"\tll query(ll l, ll r) { return query(l, r, 1, 0, n - 1).val; }",
 			"};"
-		]
+		],
+		"description": "Segment Tree implementation with lazy propagation supporting both range updates (set or add operations) and queries. Provides point update, range update, and range query functionalities. The merge function can be customized depending on the required segment operation (e.g., sum, min, max)."
 	},
 	"Bit Trie Full Template": {
 		"prefix": ["BitTrie" , "bittrie"],
@@ -889,7 +899,8 @@
 			"\t\treturn ans;",
 			"\t}",
 			"};"
-		]
+		],
+		"description": "Implements a binary trie (bitwise trie) for integers, supporting insertion and multiple queries: maximum/minimum number, maximum/minimum XOR, maximum/minimum OR, and maximum/minimum AND with a given number. Useful for bit manipulation problems and efficient range queries."
 	},
 	"String Trie": {
 		"prefix": ["StringTrie" , "stringtrie"],
@@ -958,7 +969,8 @@
 			"\t\treturn node->count;",
 			"\t}",
 			"};"
-		]
+		],
+		"description": "Implements a Trie (prefix tree) for lowercase English strings. Supports word insertion, full word search, prefix existence check, and counting the number of words sharing a given prefix."
 	},
 	"Longest Common Subsequence": {
 		"prefix": ["LCS" , "lcs"],
@@ -995,7 +1007,8 @@
 			"",
 			"\treturn {dp[n][m], lcs_str};",
 			"}"
-		]
+		],
+		"description": "Finds the Longest Common Subsequence (LCS) of two strings using dynamic programming in O(n*m). Returns both the LCS length and the reconstructed subsequence."
 	},
 	"Longest Increasing Subsequence": {
 		"prefix": ["LIS" , "lis"],
@@ -1027,7 +1040,8 @@
 			"\treverse(all(lis_seq));",
 			"\treturn {d.size(), lis_seq};",
 			"}"
-		]
+		],
+		"description": "Computes the Longest Increasing Subsequence (LIS) in O(n log n). Returns both the length and the actual LIS sequence."
 	},
 	"0-1 Knapsack (Space Optimized)": {
 		"prefix": ["Knapsack" , "knapsack"],
@@ -1050,6 +1064,24 @@
 			"\t}",
 			"\treturn dp[W];",
 			"}"
-		]
+		],
+		"description": "0/1 Knapsack (space optimized) using 1D DP array. Time complexity: O(nW), Space complexity: O(W)."
+	},
+	"Sieve of Eratosthenes": {
+		"prefix": ["Sieve" , "sieve"],
+		"body": [
+			"vb is_prime;",
+			"void sieve(ll n) {",
+			"\tis_prime.assign(n+1,true);",
+			"\tis_prime[0] = is_prime[1] = false;",
+			"\tfor(ll i=2;i*i<=n;i++) {",
+			"\t\tif(is_prime[i]) {",
+			"\t\t\tfor(ll j=i*i;j<=n;j+=i)",
+			"\t\t\t\tis_prime[j] = false;",
+			"\t\t}",
+			"\t}",
+			"}"
+		],
+		"description": "Sieve of Eratosthenes template (O(n log log n))"
 	}
 }
