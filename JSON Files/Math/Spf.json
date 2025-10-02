@@ -1,0 +1,28 @@
+{
+    "Smallest Prime Factor Sieve": {
+        "prefix": ["Spf" , "spf" , "spf_sieve"],
+        "body": [
+            "vl spf;",
+            "void build_spf(ll n) {",
+            "\tspf.assign(n + 1, 0);",
+            "\tiota(spf.begin(), spf.end(), 0LL);",
+            "\tfor (ll i = 2; i * i <= n; i++) {",
+            "\t\tif (spf[i] == i) {",
+            "\t\t\tfor (ll j = i * i; j <= n; j += i) {",
+            "\t\t\t\tif (spf[j] == j) spf[j] = i;",
+            "\t\t\t}",
+            "\t\t}",
+            "\t}",
+            "}",
+            "",
+            "vl factorize(ll x) {",
+            "\tvl factors;",
+            "\twhile (x > 1) {",
+            "\t\tfactors.push_back(spf[x]);",
+            "\t\tx /= spf[x];",
+            "\t}",
+            "\treturn factors;",
+            "}"
+        ]
+    }
+}

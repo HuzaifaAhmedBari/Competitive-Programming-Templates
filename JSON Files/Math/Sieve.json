@@ -1,0 +1,18 @@
+{
+    "Sieve of Eratosthenes": {
+        "prefix": ["Sieve" , "sieve"],
+        "body": [
+            "vb is_prime;",
+            "void sieve(ll n) {",
+            "\tis_prime.assign(n+1,true);",
+            "\tis_prime[0] = is_prime[1] = false;",
+            "\tfor(ll i=2;i*i<=n;i++) {",
+            "\t\tif(is_prime[i]) {",
+            "\t\t\tfor(ll j=i*i;j<=n;j+=i)",
+            "\t\t\t\tis_prime[j] = false;",
+            "\t\t}",
+            "\t}",
+            "}"
+        ]
+    }
+}

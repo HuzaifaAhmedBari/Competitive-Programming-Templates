@@ -9,6 +9,7 @@
         "ranges": "cpp",
         "span": "cpp",
         "stacktrace": "cpp",
-        "regex": "cpp"
+        "regex": "cpp",
+        "numeric": "cpp"
     }
 }
