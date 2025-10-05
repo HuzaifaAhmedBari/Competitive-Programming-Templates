@@ -1,17 +1,16 @@
 {
-    "DSU Class": {
+	"DSU Class": {
 		"prefix": ["Dsuclass" , "dsuclass" , "Disjoint" , "disjoint"],
 		"body": [
 			"class DSU {",
-			"private:",
+			"public:",
 			"\tll n, components;",
 			"\tvl parent, size;",
 			"",
-			"public:",
 			"\tDSU(int n) : n(n), components(n) {",
 			"\t\tparent.resize(n+1);",
 			"\t\tsize.resize(n+1, 1);",
-			"\t\tiota(all(parent), 1);",
+			"\t\tiota(all(parent), 0);",
 			"\t}",
 			"",
 			"\tll find(ll x) {",

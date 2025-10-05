@@ -1,13 +1,12 @@
 class DSU {
-private:
+public:
     ll n, components;
     vl parent, size;
 
-public:
     DSU(int n) : n(n), components(n) {
         parent.resize(n+1);
         size.resize(n+1, 1);
-        iota(all(parent),1);
+        iota(all(parent), 0);
     }
 
     ll find(ll x) {
@@ -19,11 +18,11 @@ public:
     bool unite(ll a, ll b) {
         a = find(a);
         b = find(b);
-        if(a==b)
+        if (a == b)
             return false;
 
-        if(size[a] < size[b])
-            swap(a,b);
+        if (size[a] < size[b])
+            swap(a, b);
         parent[b] = a;
         size[a] += size[b];
         components--;
