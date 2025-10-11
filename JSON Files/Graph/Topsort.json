@@ -2,7 +2,6 @@
     "Topological Sort with DP": {
 		"prefix": ["Topsort", "topsort"],
 		"body": [
-			"vl parent",
 			"vl topo, dist;",
 			"bool topsort(ll n, const vll &adj, ll source = 0) {",
 			"\tll count = 0;",
