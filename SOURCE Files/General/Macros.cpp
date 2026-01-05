@@ -26,7 +26,10 @@ using ordered_set = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statisti
 #define vvpii vector<vector<pair<ll,ll>>>
 #define vb vector<bool>
 #define vbb vector<vector<bool>>
-#define us unordered_set<ll>
+#define vc vector<char>
+#define vcc vector<vector<char>>
+#define vs vector<string>
+#define vss vector<vector<string>>
 #define all(vec) vec.begin(), vec.end()
 #define allr(vec) vec.rbegin(), vec.rend()
 #define sahi(vec) sort(vec.begin(),vec.end())
@@ -73,32 +76,6 @@ ostream& operator<<(ostream &out, const vector<pair<A,B>> &vp) {
     return out;
 }
 
-vb is_prime;
-void sieve(ll n) {
-    is_prime.assign(n+1,true);
-    is_prime[0] = is_prime[1] = false;
-    for(ll i=2;i*i<=n;i++) {
-        if(is_prime[i]) {
-            for(ll j=i*i;j<=n;j+=i)
-                is_prime[j] = false;
-        }
-    }
-}
-bool isprime(ll n) {
-    if(n<2)	return false;
-    if(n==2 || n==3)	return true;
-    if(n%2==0 || n%3==0)	return false;
-    for(ll i=5;i*i<=n;i++)
-    {
-        if(n%i==0 || n%(i+2)==0)
-            return false;
-    }
-    return true;
-}
-ll nextprime(ll n)	{ return (isprime(n))? n : nextprime(n+1); }
-ll sum_digits(ll n)	{ return (n<10)? n : n%10 + sum_digits(n/10); }
-ll gcd(ll a, ll b)	{ return (b==0)? a : gcd(b,a%b); }
-ll lcm(ll a, ll b)	{ return (a*b)/gcd(a,b); }
 int main()
 {
     io;
