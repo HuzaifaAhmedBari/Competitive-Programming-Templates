@@ -42,7 +42,6 @@
 			"\t}",
 			"\treturn occurrences;",
 			"}"
-		],
-		"description": "Knuth-Morris-Pratt (KMP) algorithm for pattern matching in O(n + m). Builds LPS array and returns all 0-based occurrences of pattern in text."
+		]
 	}
 }
