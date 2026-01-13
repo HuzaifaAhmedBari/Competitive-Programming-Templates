@@ -1,5 +1,5 @@
 {
-    "CP_Functions_And_Templates": {
+    "CP_Macros_And_I/O_Overloads": {
 		"prefix": "func",
 		"body": [
 			"//Maqsad Nahi Bhoolna",
@@ -58,11 +58,6 @@
 			"\tfor (auto &x : v) in >> x;",
 			"\treturn in;",
 			"}",
-			"template <typename A, typename B>",
-			"istream& operator>>(istream &in, vector<pair<A,B>> &vp) {",
-			"\tfor (auto &p : vp) in >> p.first >> p.second;",
-			"\treturn in;",
-			"}",
 			"",
 			"template <typename A, typename B>",
 			"ostream& operator<<(ostream &out, const pair<A,B> &p) {",
@@ -72,11 +67,6 @@
 			"template <typename T>",
 			"ostream& operator<<(ostream &out, const vector<T> &v) {",
 			"\tfor (auto &x : v) out << x << \" \";",
-			"\treturn out;",
-			"}",
-			"template <typename A, typename B>",
-			"ostream& operator<<(ostream &out, const vector<pair<A,B>> &vp) {",
-			"\tfor (auto &p : vp) out << p.first << \" \" << p.second << \"\\n\";",
 			"\treturn out;",
 			"}",
 			"",

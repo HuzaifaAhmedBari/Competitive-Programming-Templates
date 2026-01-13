@@ -54,11 +54,6 @@ istream& operator>>(istream &in, vector<T> &v) {
     for (auto &x : v) in >> x;
     return in;
 }
-template <typename A, typename B>
-istream& operator>>(istream &in, vector<pair<A,B>> &vp) {
-    for (auto &p : vp) in >> p.first >> p.second;
-    return in;
-}
 
 template <typename A, typename B>
 ostream& operator<<(ostream &out, const pair<A,B> &p) {
@@ -68,11 +63,6 @@ ostream& operator<<(ostream &out, const pair<A,B> &p) {
 template <typename T>
 ostream& operator<<(ostream &out, const vector<T> &v) {
     for (auto &x : v) out << x << " ";
-    return out;
-}
-template <typename A, typename B>
-ostream& operator<<(ostream &out, const vector<pair<A,B>> &vp) {
-    for (auto &p : vp) out << p.first << " " << p.second << "\n";
     return out;
 }
 
