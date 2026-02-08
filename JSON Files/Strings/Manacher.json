@@ -1,0 +1,22 @@
+{
+    "Manacher Algorithm (Even + Odd Palindromes)": {
+        "prefix": "manacher",
+        "body": [
+        "// 0 is even, 1 is odd",
+        "array<vector<ll>, 2> manacher(const string &s) {",
+        "\tll n = s.size();",
+        "\tarray<vector<ll>, 2> p = {vector<ll>(n + 1), vector<ll>(n)};",
+        "\tfor (ll z = 0; z < 2; ++z)",
+        "\t\tfor (ll i = 0, l = 0, r = 0; i < n; i++) {",
+        "\t\t\tll t = r - i + !z;",
+        "\t\t\tif (i < r) p[z][i] = min(t, p[z][l + t]);",
+        "\t\t\tll L = i - p[z][i], R = i + p[z][i] - !z;",
+        "\t\t\twhile (L >= 1 && R + 1 < n && s[L - 1] == s[R + 1])",
+        "\t\t\t\tp[z][i]++, L--, R++;",
+        "\t\t\tif (R > r) l = L, r = R;",
+        "\t\t}",
+        "\treturn p;",
+        "}"
+        ]
+    }
+}
