@@ -1,0 +1,33 @@
+{
+	"ModInt": {
+		"prefix": "modint",
+		"body": [
+            "const int mod = 1000000007;",
+			"template<int M> struct modint {",
+			"\tint v;",
+			"\tmodint(long long x = 0) : v(x % M) { if (v < 0) v += M; }",
+			"\tmodint& operator+=(const modint& o) { if ((v += o.v) >= M) v -= M; return *this; }",
+			"\tmodint& operator-=(const modint& o) { if ((v -= o.v) < 0) v += M; return *this; }",
+			"\tmodint& operator*=(const modint& o) { v = 1LL * v * o.v % M; return *this; }",
+			"\tmodint& operator/=(const modint& o) { return *this *= o.inv(); }",
+			"\tmodint operator-() const { return modint() - *this; }",
+			"\tmodint pow(long long k) const {",
+			"\t\tmodint r = 1, x = *this;",
+			"\t\tfor (; k; k >>= 1) { if (k & 1) r *= x; x *= x; }",
+			"\t\treturn r;",
+			"\t}",
+			"\tmodint inv() const { return pow(M - 2); }",
+			"\tfriend modint operator+(modint a, const modint& b) { return a += b; }",
+			"\tfriend modint operator-(modint a, const modint& b) { return a -= b; }",
+			"\tfriend modint operator*(modint a, const modint& b) { return a *= b; }",
+			"\tfriend modint operator/(modint a, const modint& b) { return a /= b; }",
+			"\tfriend bool operator==(const modint& a, const modint& b) { return a.v == b.v; }",
+			"\tfriend bool operator!=(const modint& a, const modint& b) { return a.v != b.v; }",
+			"\tfriend bool operator<(const modint& a, const modint& b) { return a.v < b.v; }",
+			"\tfriend istream& operator>>(istream& i, modint& m) { long long x; i >> x; m = x; return i; }",
+			"\tfriend ostream& operator<<(ostream& o, const modint& m) { return o << m.v; }",
+			"};",
+			"using mint = modint<mod>;"
+		]
+	}
+}
