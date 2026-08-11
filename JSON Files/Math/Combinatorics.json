@@ -1,5 +1,5 @@
 {
-    "nCr and nPr Functions": {
+    "Combinatorics Functions": {
 		"prefix": ["Ncr" , "ncr" , "Npr" , "npr"],
 		"body": [
 			"// Precompute factorials and inverse factorials for nCr and nPr",
